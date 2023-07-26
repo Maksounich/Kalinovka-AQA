@@ -6,13 +6,13 @@ import utiles.User;
 
 public class SignInPage extends BasePage {
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@id='input_15']")
     private WebElement email;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@id='input_16']")
     private WebElement password;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//button[@type='submit']")
     private WebElement submitBtn;
 
     public HomePage login(User user) {
