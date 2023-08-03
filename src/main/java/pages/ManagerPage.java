@@ -1,13 +1,10 @@
 package pages;
 
 import core.BasePage;
-import org.openqa.selenium.Keys;
+import core.ContainerDrv;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-
-import java.nio.file.Watchable;
 
 public class ManagerPage extends BasePage {
 
@@ -32,40 +29,34 @@ public class ManagerPage extends BasePage {
     @FindBy(xpath = "//button[contains(text(),\"Process\")]")
     private WebElement processBtn;
 
-    public ManagerPage() {
-        PageFactory.initElements(driver,this);
-    }
-
-    public ManagerPage addCustomer(String fName,String lName,String postCode){
-        addCustBtn.click();
-        fNameField.sendKeys(fName);
-        lNameField.sendKeys(lName);
-        postCodeField.sendKeys(postCode);
-        addCustConfirmBtn.click();
-        driver.switchTo().alert().accept();
+    public ManagerPage addCustomer(String fName, String lName, String postCode) {
+        click(addCustBtn);
+        sendKeys(fNameField,fName);
+        sendKeys(lNameField,lName);
+        sendKeys(postCodeField,postCode);
+        click(addCustConfirmBtn);
+        ContainerDrv.getDriver().switchTo().alert().accept();
         return this;
     }
 
-    public ManagerPage clickOpenAccount(){
-        openAccountBtn.click();
+    public ManagerPage clickOpenAccount() {
+        click(openAccountBtn);
         return this;
     }
 
     public ManagerPage selectUser(String userValue) {
-        Select select = new Select(userSelect);
-        select.selectByVisibleText(userValue);
+        selectByText(userSelect,userValue);
         return this;
     }
 
-    public ManagerPage selectCurrency(String currency){
-        Select select = new Select(currencySelect);
-        select.selectByVisibleText(currency);
+    public ManagerPage selectCurrency(String currency) {
+        selectByText(currencySelect,currency);
         return this;
     }
 
-    public ManagerPage clickProcess(){
-        processBtn.click();
-        driver.switchTo().alert().accept();
+    public ManagerPage clickProcess() {
+        click(processBtn);
+        ContainerDrv.getDriver().switchTo().alert().accept();
         return this;
     }
 

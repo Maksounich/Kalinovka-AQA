@@ -36,48 +36,38 @@ public class AccountPage extends BasePage {
     @FindBy(xpath = "//span[@class=\"error ng-binding\"]")
     private WebElement trxInfo;
 
-    public AccountPage() {
-        PageFactory.initElements(driver, this);
-    }
 
     public AccountPage depositeAmount(String sum){
-        depositBtn.click();
-        depositField.sendKeys(sum);
-        confirmBtn.click();
+        click(depositBtn);
+        sendKeys(depositField,sum);
+        click(confirmBtn);
         return this;
     }
 
     public AccountPage withdrawlAmount(String sum){
-        withdrawlBtn.click();
-        withdrawlField.sendKeys(sum);
-        confirmBtn.click();
+        click(withdrawlBtn);
+        sendKeys(withdrawlField,sum);
+        click(confirmBtn);
         return this;
     }
 
     public AccountPage logOut(){
-        logOutBtn.click();
+        click(logOutBtn);
         return this;
     }
 
     public AccountPage selectAccount(String accountValue) {
-        Select select = new Select(accountSelect);
-        select.selectByVisibleText(accountValue);
-        accountSelect.click();
+        selectByText(accountSelect,accountValue);
         return this;
     }
 
-    public AccountPage assertWithdrawlTrx(){
-        String trxInfoTxt = trxInfo.getText();
-        Assert.assertEquals(trxInfoTxt,"Transaction successful", "no trx");
-        return this;
+//    public AccountPage getTrxInfo(){
+//        trxInfo.getText();
+//        return this;
+//    }
+
+
+    public WebElement getTrxInfo() {
+        return trxInfo;
     }
-
-    public AccountPage assertDepositTrx(){
-        String trxInfoTxt = trxInfo.getText();
-        Assert.assertEquals(trxInfoTxt,"Deposit Successful","no deposit");
-        return this;
-    }
-
-
-
 }

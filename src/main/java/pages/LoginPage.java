@@ -1,13 +1,8 @@
 package pages;
 
 import core.BasePage;
-import org.apache.commons.logging.Log;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.Test;
-
-import java.util.Properties;
 
 public class LoginPage extends BasePage {
 
@@ -20,22 +15,19 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//button[@ng-click=\"manager()\"]")
     private WebElement managerLoginBtn;
 
-    public LoginPage() {
-        PageFactory.initElements(driver, this);
-    }
 
-    public CustomerPage getCustomerLogin(){
-        customerLoginBtn.click();
+    public CustomerPage clickCustomerLogin(){
+        click(customerLoginBtn);
         return new CustomerPage();
     }
 
-    public ManagerPage getManagerLogin(){
-        managerLoginBtn.click();
+    public ManagerPage clickManagerLogin(){
+        click(managerLoginBtn);
         return new ManagerPage();
     }
 
     public LoginPage goHome(){
-        homeBtn.click();
+        click(homeBtn);
         return this;
     }
 
