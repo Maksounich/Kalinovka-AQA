@@ -80,5 +80,5 @@ public class BookYeTest extends TestInit{
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://book-ye.com.ua/");
     }
-    
+
 }

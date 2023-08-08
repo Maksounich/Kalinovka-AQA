@@ -71,12 +71,7 @@ public class HomePage extends BasePage {
     {
         driver.findElement(catalogBtn).click();
         driver.findElement(By.xpath("//a[contains(text(), '" + name + "')]")).click();
+        
         return new CatalogPage(driver);
     }
-
-    public WebElement getElem(By name)
-    {
-        return driver.findElement(name);
-    }
-
 }
