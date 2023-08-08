@@ -61,12 +61,6 @@ public class AccountPage extends BasePage {
         return this;
     }
 
-//    public AccountPage getTrxInfo(){
-//        trxInfo.getText();
-//        return this;
-//    }
-
-
     public WebElement getTrxInfo() {
         return trxInfo;
     }

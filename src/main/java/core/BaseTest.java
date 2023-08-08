@@ -17,7 +17,7 @@ public abstract class BaseTest {
 
     @AfterClass
     public void tearDown() {
-//        ContainerDrv.getDriver().quit();
+        ContainerDrv.getDriver().quit();
     }
 
 

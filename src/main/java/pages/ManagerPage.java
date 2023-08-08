@@ -4,7 +4,6 @@ import core.BasePage;
 import core.ContainerDrv;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
 public class ManagerPage extends BasePage {
 
@@ -12,6 +11,10 @@ public class ManagerPage extends BasePage {
     private WebElement addCustBtn;
     @FindBy(xpath = "//button[@ng-click=\"openAccount()\"]")
     private WebElement openAccountBtn;
+
+    @FindBy(xpath = "//button[@ng-click=\"showCust()\"]")
+    private WebElement customersBtn;
+
     @FindBy(xpath = "//button[@ng-click=\"showCust()\"]")
     private WebElement showCustBtn;
     @FindBy(xpath = "//input[@ng-model=\"fName\"]")
@@ -28,6 +31,12 @@ public class ManagerPage extends BasePage {
     private WebElement currencySelect;
     @FindBy(xpath = "//button[contains(text(),\"Process\")]")
     private WebElement processBtn;
+
+    @FindBy(xpath = "//input[@ng-model=\"searchCustomer\"]")
+    private WebElement searchCustomerField;
+
+    @FindBy(xpath = "//button[@ng-click=\"deleteCust(cust)\"]")
+    private WebElement deleteBtn;
 
     public ManagerPage addCustomer(String fName, String lName, String postCode) {
         click(addCustBtn);
@@ -60,5 +69,18 @@ public class ManagerPage extends BasePage {
         return this;
     }
 
+    public ManagerPage clickCustomers(){
+        click(customersBtn);
+        return this;
+    }
+
+    public ManagerPage searchCustomer(String user){
+        sendKeys(searchCustomerField, user);
+        return this;
+    }
+
+    public WebElement getDeleteBtn(){
+        return deleteBtn;
+    }
 
 }

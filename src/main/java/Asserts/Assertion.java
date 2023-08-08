@@ -10,4 +10,9 @@ public class Assertion {
         Assert.assertEquals(txt, expected);
         return this;
     }
+
+    public Assertion assertBtn(WebElement element){
+        Assert.assertTrue(element.isDisplayed());
+        return this;
+    }
 }
