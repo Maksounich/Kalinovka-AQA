@@ -4,8 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-      /*  Person nelka = new Person ();
+/*
+       Person nelka = new Person ();
         nelka.name = "Nelka";
         nelka.age = 28;
 
@@ -18,11 +18,11 @@ public class Main {
         System.out.println(nelka.age);
 
         System.out.println(max.name);
-        System.out.println(max.age); */
+        System.out.println(max.age);
 
 
 
-      /*  System.out.println("Tell me why");
+        System.out.println("Tell me why");
         System.out.println("Ain't nothin' but a heartache");
 
         System.out.print("I believe i can fly");
@@ -50,7 +50,7 @@ public class Main {
 
         System.out.println (oneByteCharter);
 
-        System.out.println (OneByteFalseOrTreu);  */
+        System.out.println (OneByteFalseOrTreu);
 
 
 
@@ -107,6 +107,36 @@ public class Main {
         boxVolume = n*m*l;
 
         System.out.println (boxVolume);
+
+*/
+
+        int age = 100;
+           //true    +   false  = false
+        if (age > 4 && age < 99) {
+
+            System.out.println("You can use lego");
+
+        }
+        else {
+
+            System.out.println("You can`t use lego");
+
+        }
+
+
+        int volvo1 = 951;
+        int volvo2 = 952;
+        int volvo3 = 953;
+        int volvo4 = 954;
+                            //  false     +      true   = true
+        System.out.println(volvo1 > volvo2 || volvo3 < volvo4);
+                            //   false     +      false   = false
+        System.out.println(volvo2 > volvo3 || volvo3 == volvo4);
+                            //   true     +       true   = true
+        System.out.println(volvo1 != volvo2 || volvo3 < volvo4);
+
+
+
 
 
 
