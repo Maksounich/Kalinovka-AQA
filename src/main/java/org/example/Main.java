@@ -1,9 +1,11 @@
 package org.example;
 
+import static org.example.StaticAndFinal.barbie;
+
 public class Main {
 
     public static void main(String[] args) {
-
+/*
         System.out.println("Tell me why");
         System.out.println("Ain't nothin' but a heartache");
 
@@ -35,12 +37,20 @@ public class Main {
         System.out.println (OneByteFalseOrTreu);
 
 
+*/
 
+        int j = StaticAndFinal.barbie (9, 6);
+        System.out.println(j);
 
+        //Метод не має модифікатор Static, тому неможливо визвати його без створення екземпляру
+        // int m = StaticAndFinal.ken (5, 2);
+        // System.out.println(m);
 
+        int m = StaticAndFinal.ken (5, 2);
+        System.out.println(m);
 
-
-
+        // Неможливо змінити значення y, бо клас StaticAndFinal має модифікатор final
+       // StaticAndFinal.y = 6;
 
     }
 }
