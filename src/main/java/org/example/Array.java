@@ -41,7 +41,7 @@ public class Array {
 
         for (int month = 0; month < spring.length; month++) {
 
-        System.out.println(spring[month]);
+            System.out.println(spring[month]);
 
         }
 
