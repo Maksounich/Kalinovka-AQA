@@ -1,14 +1,15 @@
-package Pages;
+package pages;
 
-import dev.failsafe.internal.util.Assert;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class HomePage extends BasePage {
     public HomePage(WebDriver driver){super(driver);}
 
+    //Paths========================================================
     private By logo = By.xpath("//a[@class=\"header__logo-link\"]");
     private By catalogBtn = By.xpath("//div[@class=\"header__catalog-wrap\"]");
     private By searchField = By.xpath("//input[@name = 'q']");
@@ -19,7 +20,9 @@ public class HomePage extends BasePage {
     private By userpasswordField = By.xpath("//input[@name=\"USER_PASSWORD\"]");
     private By loginSubmitBtn = By.xpath("//input[@value=\"Увійти\"]");
     private By mainSearchField = By.xpath("//input[@id=\"q\"]");
+    private By userBtn = By.xpath("//span[text() = \"Вітаємо, \"]");
 
+    //Functions==============================================
     public HomePage clickLogo()
     {
         driver.findElement(logo).click();
@@ -35,10 +38,10 @@ public class HomePage extends BasePage {
         driver.findElement(basketBtn).click();
         return new HomePage(driver);
     }
-    public HomePage clickWishlist()
+    public WishListPage clickWishlist()
     {
         driver.findElement(wishlistBtn).click();
-        return new HomePage(driver);
+        return new WishListPage(driver);
     }
     public HomePage clickLogin()
     {
@@ -46,14 +49,18 @@ public class HomePage extends BasePage {
         return new HomePage(driver);
     }
 
-
-
+    public HomePage clickSearchField()
+    {
+        driver.findElement(searchField).click();
+        return new HomePage(driver);
+    }
 
     public BookPage findBook(String name)
     {
-        driver.findElement(searchField).click();
+        By elem = By.xpath("//span[text() = '" + name + "']");
         driver.findElement(mainSearchField).sendKeys(name);
-        driver.findElement(By.xpath("//span[text() = '" + name + "']")).click();
+        waitElemVisibility(elem);
+        driver.findElement(elem).click();
 
         return new BookPage(driver);
     }
@@ -69,9 +76,23 @@ public class HomePage extends BasePage {
 
     public CatalogPage catalogChoose(String name)
     {
-        driver.findElement(catalogBtn).click();
         driver.findElement(By.xpath("//a[contains(text(), '" + name + "')]")).click();
         
         return new CatalogPage(driver);
     }
+
+    public HomePage assertLoginCheck()
+    {
+        Assert.assertTrue(driver.findElement(userBtn).isDisplayed());
+
+        return new HomePage(driver);
+    }
+
+    public HomePage assertCheckUrl(String url)
+    {
+        Assert.assertEquals(driver.getCurrentUrl(), url);
+
+        return new HomePage(driver);
+    }
+
 }
