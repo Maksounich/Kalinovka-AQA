@@ -49,8 +49,10 @@ public class Main {
         int m = StaticAndFinal.ken (5, 2);
         System.out.println(m);
 
+        return;
         // Неможливо змінити значення y, бо клас StaticAndFinal має модифікатор final
        // StaticAndFinal.y = 6;
+
 
     }
 }

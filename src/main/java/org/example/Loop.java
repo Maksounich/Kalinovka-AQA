@@ -1,6 +1,6 @@
 package org.example;
 
-public class Cycle {
+public class Loop {
 
     public static void main(String[] args) {
 
