@@ -2,24 +2,26 @@ package core;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import utilities.PropertyReader;
 
 
 
 public abstract class BaseTest {
-
     @BeforeMethod
-    public void setUp(){
-        WebDriverManager.chromedriver().setup();
-        Configuration.browser = "chrome";
-        Configuration.browserSize = "1920x1080";
+    public void  openBrowser(){
         Selenide.open(PropertyReader.getProp("url"));
     }
 
-    @AfterClass
+    @BeforeSuite
+    public void setUp(){
+        Configuration.browser = "chrome";
+        Configuration.browserSize = "1920x1080";
+    }
+
+    @AfterMethod
     public void closeBrowser(){
         Selenide.closeWebDriver();
     }

@@ -8,7 +8,7 @@ import pages.ManagerPage;
 import utilities.Assertions;
 import utilities.PropertyReader;
 
-public class Test1 extends BaseTest {
+public class TestExample extends BaseTest {
     private LoginPage loginPage;
     private CustomerPage customerPage;
     private AccountPage accountPage;
@@ -20,7 +20,7 @@ public class Test1 extends BaseTest {
     private final String currency = PropertyReader.getProp("Currency");
 
     @BeforeMethod
-    public void openBrowser(){
+    public void createObjects(){
         loginPage = new LoginPage();
         customerPage = new CustomerPage();
         accountPage = new AccountPage();
@@ -29,13 +29,11 @@ public class Test1 extends BaseTest {
     }
 
     @Test
-    public void addcCustomerTest() {
+    public void addCustomerTest() {
         loginPage.clickManagerLogin()
                 .addCustomer(firstName, lastName, postCode)
                 .clickOpenAccount()
-                .selectUser(firstName + " " + lastName)
-                .selectCurrency(currency)
-                .clickProcess()
+                .openingUsersAccount(firstName + " " + lastName, currency)
                 .clickCustomers()
                 .searchCustomer(firstName);
         assertions.assertBtn(managerPage.getDeleteBtn());

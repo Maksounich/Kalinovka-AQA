@@ -37,17 +37,9 @@ public class ManagerPage extends BasePage {
         return this;
     }
 
-    public ManagerPage selectUser(String userValue) {
+    public ManagerPage openingUsersAccount(String userValue, String currency) {
         selectByText(userSelect, userValue);
-        return this;
-    }
-
-    public ManagerPage selectCurrency(String currency) {
         selectByText(currencySelect, currency);
-        return this;
-    }
-
-    public ManagerPage clickProcess() {
         click(processBtn);
         return this;
     }
