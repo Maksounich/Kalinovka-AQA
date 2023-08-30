@@ -1,7 +1,5 @@
 import Asserts.Assertion;
-import core.BaseTest;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
+import core.BaseTest;;
 import org.testng.annotations.Test;
 import pages.AccountPage;
 import pages.CustomerPage;
@@ -15,7 +13,7 @@ public class AddCustomerTest extends BaseTest {
     private final String currency = "Dollar";
 
     @Test
-    public void addcCustomerTest(){
+    public void addcCustomerTest() {
         LoginPage loginPage = new LoginPage();
         CustomerPage customerPage = new CustomerPage();
         AccountPage accountPage = new AccountPage();
@@ -23,7 +21,7 @@ public class AddCustomerTest extends BaseTest {
         ManagerPage managerPage = new ManagerPage();
 
         loginPage.clickManagerLogin()
-                .addCustomer(firstName,lastName,postCode)
+                .addCustomer(firstName, lastName, postCode)
                 .clickOpenAccount()
                 .selectUser(firstName + " " + lastName)
                 .selectCurrency(currency)
@@ -36,10 +34,9 @@ public class AddCustomerTest extends BaseTest {
                 .selectUser(firstName + " " + lastName)
                 .selectAccount("1016")
                 .depositeAmount("100");
-        assertion.assertText(accountPage.getTrxInfo(),"Deposit Successful");
+        assertion.assertText(accountPage.getTrxInfo(), "Deposit Successful");
         accountPage.withdrawlAmount("100");
         assertion.assertText(accountPage.getTrxInfo(), "Transaction successful");
-
-
     }
+
 }

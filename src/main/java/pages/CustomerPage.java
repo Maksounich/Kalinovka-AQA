@@ -1,11 +1,8 @@
 package pages;
 
 import core.BasePage;
-import core.ContainerDrv;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 public class CustomerPage extends BasePage {
 
@@ -14,7 +11,6 @@ public class CustomerPage extends BasePage {
 
     @FindBy(xpath = "//button[contains(text(),\"Login\")]")
     private WebElement loginBtn;
-
 
     public AccountPage selectUser(String userName) {
         selectByText(userSelect, userName);

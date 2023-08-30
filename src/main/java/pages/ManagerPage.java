@@ -40,9 +40,9 @@ public class ManagerPage extends BasePage {
 
     public ManagerPage addCustomer(String fName, String lName, String postCode) {
         click(addCustBtn);
-        sendKeys(fNameField,fName);
-        sendKeys(lNameField,lName);
-        sendKeys(postCodeField,postCode);
+        sendKeys(fNameField, fName);
+        sendKeys(lNameField, lName);
+        sendKeys(postCodeField, postCode);
         click(addCustConfirmBtn);
         ContainerDrv.getDriver().switchTo().alert().accept();
         return this;
@@ -54,12 +54,12 @@ public class ManagerPage extends BasePage {
     }
 
     public ManagerPage selectUser(String userValue) {
-        selectByText(userSelect,userValue);
+        selectByText(userSelect, userValue);
         return this;
     }
 
     public ManagerPage selectCurrency(String currency) {
-        selectByText(currencySelect,currency);
+        selectByText(currencySelect, currency);
         return this;
     }
 
@@ -69,17 +69,17 @@ public class ManagerPage extends BasePage {
         return this;
     }
 
-    public ManagerPage clickCustomers(){
+    public ManagerPage clickCustomers() {
         click(customersBtn);
         return this;
     }
 
-    public ManagerPage searchCustomer(String user){
+    public ManagerPage searchCustomer(String user) {
         sendKeys(searchCustomerField, user);
         return this;
     }
 
-    public WebElement getDeleteBtn(){
+    public WebElement getDeleteBtn() {
         return deleteBtn;
     }
 

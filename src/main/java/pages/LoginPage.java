@@ -16,17 +16,17 @@ public class LoginPage extends BasePage {
     private WebElement managerLoginBtn;
 
 
-    public CustomerPage clickCustomerLogin(){
+    public CustomerPage clickCustomerLogin() {
         click(customerLoginBtn);
         return new CustomerPage();
     }
 
-    public ManagerPage clickManagerLogin(){
+    public ManagerPage clickManagerLogin() {
         click(managerLoginBtn);
         return new ManagerPage();
     }
 
-    public LoginPage goHome(){
+    public LoginPage goHome() {
         click(homeBtn);
         return this;
     }

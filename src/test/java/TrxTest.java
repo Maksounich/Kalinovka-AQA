@@ -14,7 +14,7 @@ public class TrxTest extends BaseTest {
     private final String withdrawl = "100";
 
     @Test
-    public void transactions(){
+    public void transactions() {
         LoginPage loginPage = new LoginPage();
         CustomerPage customerPage = new CustomerPage();
         AccountPage accountPage = new AccountPage();
@@ -24,8 +24,9 @@ public class TrxTest extends BaseTest {
                 .selectUser(userValue)
                 .selectAccount(accountValue)
                 .depositeAmount(deposit);
-        assertion.assertText(accountPage.getTrxInfo(),"Deposit Successful");
+        assertion.assertText(accountPage.getTrxInfo(), "Deposit Successful");
         accountPage.withdrawlAmount(withdrawl);
         assertion.assertText(accountPage.getTrxInfo(), "Transaction successful");
     }
+
 }

@@ -3,9 +3,6 @@ package pages;
 import core.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 public class AccountPage extends BasePage {
 
@@ -27,6 +24,7 @@ public class AccountPage extends BasePage {
     @FindBy(xpath = "//form[@ng-submit=\"deposit()\"]//input[@placeholder=\"amount\"]")
     private WebElement depositField;
 
+
     @FindBy(xpath = "//form[@ng-submit=\"withdrawl()\"]//input[@placeholder=\"amount\"]")
     private WebElement withdrawlField;
 
@@ -37,27 +35,27 @@ public class AccountPage extends BasePage {
     private WebElement trxInfo;
 
 
-    public AccountPage depositeAmount(String sum){
+    public AccountPage depositeAmount(String sum) {
         click(depositBtn);
-        sendKeys(depositField,sum);
+        sendKeys(depositField, sum);
         click(confirmBtn);
         return this;
     }
 
-    public AccountPage withdrawlAmount(String sum){
+    public AccountPage withdrawlAmount(String sum) {
         click(withdrawlBtn);
-        sendKeys(withdrawlField,sum);
+        sendKeys(withdrawlField, sum);
         click(confirmBtn);
         return this;
     }
 
-    public AccountPage logOut(){
+    public AccountPage logOut() {
         click(logOutBtn);
         return this;
     }
 
     public AccountPage selectAccount(String accountValue) {
-        selectByText(accountSelect,accountValue);
+        selectByText(accountSelect, accountValue);
         return this;
     }
 
