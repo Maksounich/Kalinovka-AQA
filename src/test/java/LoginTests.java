@@ -2,10 +2,7 @@ import io.restassured.response.Response;
 import login.Login;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import register.Register;
-import register.RegisterSuccess;
 import utils.Specifications;
-
 import static io.restassured.RestAssured.given;
 
 public class LoginTests {
@@ -36,10 +33,8 @@ public class LoginTests {
                 .post("api/login")
                 .then().log().all()
                 .extract().response();
-
         String error = response.jsonPath().get("error");
         Assert.assertEquals(error, "Missing password");
     }
-
 }
 

@@ -18,7 +18,6 @@ public class UsersTests {
                 .get("api/users?page=2")
                 .then().log().all()
                 .extract().body().jsonPath().getList("data", ListUsersData.class);
-
         users.forEach(x-> Assert.assertTrue(x.getAvatar().contains(x.getId().toString())));
 // The second method assertion:
         List<String> avatars = users.stream().map(ListUsersData::getAvatar).collect(Collectors.toList());
@@ -36,7 +35,6 @@ public class UsersTests {
                 .get("api/users/2")
                 .then().log().all()
                 .extract().body().jsonPath().getObject("data", SingleUser.class);
-
         Assert.assertEquals(user.getId(),2);
         Assert.assertEquals(user.getFirst_name(),"Janet");
     }
@@ -49,7 +47,6 @@ public class UsersTests {
                 .get("api/users/23")
                 .then().log().all()
                 .extract().as(SingleUser.class);
-
         Assert.assertNull(user.getFirst_name(),user.getLast_name());
         Assert.assertNull(user.getId(), user.getAvatar());
         Assert.assertNull(user.getEmail());

@@ -1,13 +1,10 @@
 package users;
 
-import java.util.Date;
-
 public class User {
     private String name;
     private String job;
 
-    public User() {
-    }
+    public User(){}
 
     public User(String name, String job) {
         this.name = name;

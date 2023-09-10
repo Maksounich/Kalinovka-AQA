@@ -22,7 +22,6 @@ public class RegistrationTests {
                 .post("api/register")
                 .then().log().all()
                 .extract().as(RegisterSuccess.class);
-
         Assert.assertEquals(id, registerSuccess.getId());
         Assert.assertEquals(token, registerSuccess.getToken());
     }

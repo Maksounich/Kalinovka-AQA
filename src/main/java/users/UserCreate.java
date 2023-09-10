@@ -9,6 +9,7 @@ public class UserCreate {
     private Date createdAt;
 
     public UserCreate() {}
+
     public UserCreate(String name, String job, String id, Date createdAt) {
         this.name = name;
         this.job = job;

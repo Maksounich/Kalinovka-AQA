@@ -19,7 +19,6 @@ public class ResourceTests {
                 .extract().body().jsonPath().getList("data", Resource.class);
         List<Integer> years = resource.stream().map(Resource::getYear).collect(Collectors.toList());
         List<Integer> sortYears = years.stream().sorted().collect(Collectors.toList());
-
         Assert.assertEquals(years, sortYears);
         System.out.println(years);
         System.out.println(sortYears);
@@ -33,7 +32,6 @@ public class ResourceTests {
                 .get("api/unknown/2")
                 .then().log().all()
                 .extract().body().jsonPath().getObject("data", Resource.class);
-
         Assert.assertEquals(resource.getYear(),2001);
         Assert.assertEquals(resource.getId(),2);
         Assert.assertEquals(resource.getPantone_value(),"17-2031");
@@ -47,7 +45,6 @@ public class ResourceTests {
                 .get("api/unknown/23")
                 .then().log().all()
                 .extract().as(Resource.class);
-
         Assert.assertNull(resource.getYear());
         Assert.assertNull(resource.getId());
         Assert.assertNull(resource.getPantone_value());
