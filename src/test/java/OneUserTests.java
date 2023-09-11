@@ -1,8 +1,8 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import users.UpdatedUser;
-import users.User;
-import users.UserCreate;
+import user.UpdatedUser;
+import user.User;
+import user.UserCreate;
 import utils.Specifications;
 import static io.restassured.RestAssured.given;
 

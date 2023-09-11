@@ -19,8 +19,8 @@ public class LoginTests {
                 .post("api/login")
                 .then().log().all()
                 .extract().response();
-        String actTocken = response.jsonPath().get("token");
-        Assert.assertEquals(actTocken, token);
+        String actuallyToken = response.jsonPath().get("token");
+        Assert.assertEquals(actuallyToken, token);
     }
 
     @Test

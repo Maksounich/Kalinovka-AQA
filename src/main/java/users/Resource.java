@@ -1,4 +1,4 @@
-package pojo;
+package users;
 
 public class Resource{
     private Integer id;

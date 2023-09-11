@@ -1,4 +1,4 @@
-package pojo;
+package users;
 
 public class SingleUser {
     private Integer id;

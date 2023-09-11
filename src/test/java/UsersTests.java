@@ -1,7 +1,7 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pojo.ListUsersData;
-import pojo.SingleUser;
+import users.ListUsersData;
+import users.SingleUser;
 import utils.Specifications;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,7 +19,7 @@ public class UsersTests {
                 .then().log().all()
                 .extract().body().jsonPath().getList("data", ListUsersData.class);
         users.forEach(x-> Assert.assertTrue(x.getAvatar().contains(x.getId().toString())));
-// The second method assertion:
+        // The second method assertion:
         List<String> avatars = users.stream().map(ListUsersData::getAvatar).collect(Collectors.toList());
         List<String> ids = users.stream().map(x -> x.getId().toString()).collect(Collectors.toList());
         for(int i = 0; i < avatars.size(); i++){
