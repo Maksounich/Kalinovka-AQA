@@ -1,8 +1,10 @@
 package org.example.pojo;
 
+import org.example.utils.PropertiesConfig;
+
 public class SwaggerSignIn {
     private String username;
-    private String password = "1234567812";
+    private String password = PropertiesConfig.password;
 
     public String getUsername() {
         return username;

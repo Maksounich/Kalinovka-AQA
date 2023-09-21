@@ -2,14 +2,17 @@ package org.example.pojo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.example.utils.PropertiesConfig;
+
+import java.util.Properties;
 
 @Data
 public class ChangedPassword {
     // @JsonFormat(pattern = "new_password")
      String username;
      String password;
-     String new_password = "127849372";
-     String confirm_new_password = "127849372";
+     String new_password = PropertiesConfig.new_password;
+     String confirm_new_password = PropertiesConfig.confirm_new_password;
 
     public String getUsername() {
         return username;

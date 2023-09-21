@@ -1,11 +1,13 @@
 package org.example.pojo;
 
+import org.example.utils.PropertiesConfig;
+
 public class StudentPojo {
     private String name = "Student №" + System.currentTimeMillis();
     private String email = System.currentTimeMillis() + "@gmail.com";
-    private String office = "Slovensko";
-    private String mentor = "Human";
-    private String signed_up = "2023-09-12T07:39:10.620Z";
+    private String office = PropertiesConfig.office;
+    private String mentor = PropertiesConfig.mentor;
+    private String signed_up = PropertiesConfig.signed_up;
 
     public String getName() {
         return name;

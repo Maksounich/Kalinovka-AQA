@@ -3,6 +3,7 @@ import io.restassured.response.Response;
 import org.example.pojo.service.StudentService;
 import org.example.pojo.*;
 import org.example.specifications.Specifications;
+import org.example.utils.PropertiesConfig;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -22,11 +23,11 @@ public class RestTest {
     //array list for deleted users
     private final static List<String> usersForDelete = new ArrayList<>();
 
-    private final static String URL = "https://reqres.in";
+    private final static String URL = PropertiesConfig.URL;
 
     @BeforeSuite
     public void beforeTEst() {
-        RestAssured.baseURI = "http://192.168.68.233:4069/api/v1";
+        RestAssured.baseURI = PropertiesConfig.baseURI;
     }
 
     //method to delete users

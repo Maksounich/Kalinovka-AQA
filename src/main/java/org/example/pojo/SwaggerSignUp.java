@@ -1,14 +1,15 @@
 package org.example.pojo;
 
+import org.example.utils.PropertiesConfig;
+
 import java.util.Properties;
 
 import static io.restassured.internal.common.assertion.AssertionSupport.properties;
 
 public class SwaggerSignUp {
-//прописать properties
-    private String username = new Properties().getProperty("username");
-    private String password = new Properties().getProperty("password");
-    private String confirm_password = new Properties().getProperty("confirm_password");
+    private String username = System.currentTimeMillis() + "$";
+    private String password = PropertiesConfig.password;
+    private String confirm_password = PropertiesConfig.confirm_password;
 
     public String getUsername() {
         return username;
