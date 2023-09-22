@@ -1,4 +1,4 @@
-package ui;
+package ui.kidstaff;
 
 import com.codeborne.selenide.Configuration;
 import org.testng.annotations.BeforeSuite;

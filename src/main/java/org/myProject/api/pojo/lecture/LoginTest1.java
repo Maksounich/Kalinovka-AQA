@@ -1,4 +1,4 @@
-package org.example.pojo.lecture;
+package org.myProject.api.pojo.lecture;
 
 public class LoginTest1 {
     private String username;

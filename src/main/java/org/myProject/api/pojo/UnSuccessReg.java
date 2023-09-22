@@ -1,4 +1,4 @@
-package org.example.pojo;
+package org.myProject.api.pojo;
 
 public class UnSuccessReg {
     private String error;

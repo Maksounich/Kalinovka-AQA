@@ -1,11 +1,7 @@
-package ui;
+package ui.kidstaff;
 
-import com.codeborne.selenide.SelenideElement;
-import org.myProject.ui.Page;
 import org.myProject.ui.SignInPage;
 
-import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;

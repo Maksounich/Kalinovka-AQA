@@ -1,8 +1,8 @@
-import org.example.pojo.SwaggerSignUp;
-import org.example.pojo.service.AuthService;
-import org.testng.annotations.Test;
+package api;
 
-import java.util.Properties;
+import org.myProject.api.pojo.SwaggerSignUp;
+import org.myProject.api.pojo.service.AuthService;
+import org.testng.annotations.Test;
 
 public class RegisterTests  extends BaseTest{
 

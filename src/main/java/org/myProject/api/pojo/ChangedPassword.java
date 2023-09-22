@@ -1,10 +1,7 @@
-package org.example.pojo;
+package org.myProject.api.pojo;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
-import org.example.utils.PropertiesConfig;
-
-import java.util.Properties;
+import org.myProject.api.utils.PropertiesConfig;
 
 @Data
 public class ChangedPassword {

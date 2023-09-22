@@ -1,6 +1,6 @@
-package org.example.pojo;
+package org.myProject.api.pojo;
 
-import org.example.utils.PropertiesConfig;
+import org.myProject.api.utils.PropertiesConfig;
 
 public class StudentPojo {
     private String name = "Student №" + System.currentTimeMillis();

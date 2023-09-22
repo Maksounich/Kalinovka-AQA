@@ -1,4 +1,4 @@
-package org.example.pojo.lecture;
+package org.myProject.api.pojo.lecture;
 
 import lombok.Data;
 

@@ -1,9 +1,9 @@
-package org.example.pojo;
+package org.myProject.api.pojo;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.example.pojo.service.AuthService;
+import org.myProject.api.pojo.service.AuthService;
 
 public class BaseRequest {
 

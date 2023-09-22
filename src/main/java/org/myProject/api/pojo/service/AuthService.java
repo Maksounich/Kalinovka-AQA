@@ -1,16 +1,16 @@
-package org.example.pojo.service;
+package org.myProject.api.pojo.service;
 
 import io.restassured.response.Response;
-import org.example.pojo.SwaggerSignIn;
-import org.example.pojo.SwaggerSignUp;
-import org.example.pojo.Token;
+import org.myProject.api.pojo.SwaggerSignIn;
+import org.myProject.api.pojo.SwaggerSignUp;
+import org.myProject.api.pojo.Token;
 
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.example.pojo.BaseRequest.postReg;
+import static org.myProject.api.pojo.BaseRequest.postReg;
 
 
 public class AuthService {

@@ -1,9 +1,11 @@
+package api;
+
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.example.pojo.service.StudentService;
-import org.example.pojo.*;
-import org.example.specifications.Specifications;
-import org.example.utils.PropertiesConfig;
+import org.myProject.api.pojo.*;
+import org.myProject.api.pojo.service.StudentService;
+import org.myProject.api.specifications.Specifications;
+import org.myProject.api.utils.PropertiesConfig;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -13,10 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
-import static org.example.pojo.service.StudentService.createStudent;
-import static org.example.pojo.service.StudentService.getStudents;
-import static org.example.pojo.BaseRequest.postReg;
-import static org.example.pojo.BaseRequest.putChange;
+import static org.myProject.api.pojo.service.StudentService.createStudent;
+import static org.myProject.api.pojo.service.StudentService.getStudents;
+import static org.myProject.api.pojo.BaseRequest.postReg;
+import static org.myProject.api.pojo.BaseRequest.putChange;
 
 
 public class RestTest {

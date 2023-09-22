@@ -1,10 +1,6 @@
-package org.example.pojo;
+package org.myProject.api.pojo;
 
-import org.example.utils.PropertiesConfig;
-
-import java.util.Properties;
-
-import static io.restassured.internal.common.assertion.AssertionSupport.properties;
+import org.myProject.api.utils.PropertiesConfig;
 
 public class SwaggerSignUp {
     private String username = System.currentTimeMillis() + "$";

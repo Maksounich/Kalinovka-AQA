@@ -1,11 +1,11 @@
-package org.example.pojo.service;
+package org.myProject.api.pojo.service;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.assertj.core.api.Assertions;
-import org.example.pojo.StudentPojo;
-import org.example.pojo.StudentResponse;
+import org.myProject.api.pojo.StudentPojo;
+import org.myProject.api.pojo.StudentResponse;
 import org.testng.Assert;
 
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.example.pojo.BaseRequest.postWithAuth;
+import static org.myProject.api.pojo.BaseRequest.postWithAuth;
 
 
 public class StudentService {

@@ -1,10 +1,11 @@
+package api;
+
 import io.restassured.response.Response;
 import org.assertj.core.api.Assertions;
-import org.example.pojo.BaseRequest;
-import org.example.pojo.SwaggerSignIn;
-import org.example.pojo.SwaggerSignUp;
-import org.example.pojo.UserData;
-import org.example.pojo.service.AuthService;
+import org.myProject.api.pojo.BaseRequest;
+import org.myProject.api.pojo.SwaggerSignIn;
+import org.myProject.api.pojo.SwaggerSignUp;
+import org.myProject.api.pojo.service.AuthService;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
