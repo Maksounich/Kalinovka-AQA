@@ -1,5 +1,6 @@
 import com.codeborne.selenide.Selenide;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import static constants.Const.BASE_URL;
 
@@ -11,5 +12,7 @@ public class LoginTest extends TestInit {
 
         mainBarPage.clickUserBtn();
         loginRegPage.login("deneek202@gmail.com", "B60zz%NGBy(q");
+
+        Assert.assertTrue(userProfile.getMyProfiletxt().isDisplayed());
     }
 }

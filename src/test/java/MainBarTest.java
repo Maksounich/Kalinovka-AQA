@@ -1,11 +1,6 @@
-import base.BasePage;
 import com.codeborne.selenide.Selenide;
-import main_bar.MainBarPage;
-import org.junit.Assert;
-import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import static base.BasePage.getCurUrl;
 import static constants.Const.BASE_URL;

@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class CatalogPage extends BasePage {
-    private SelenideElement size = $x("//h4[text() = 'Розмір']");
+    protected SelenideElement size = $x("//h4[text() = 'Розмір']");
     private SelenideElement season = $x("//h4[text() = \"Сезон\"]");
     private SelenideElement use = $x("//h4[text() = \"Призначення\"]");
     private SelenideElement height = $x("//h4[text() = \"Висота шкарпетки\"]");

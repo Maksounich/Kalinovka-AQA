@@ -1,6 +1,6 @@
 import com.codeborne.selenide.Selenide;
-import org.junit.Test;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import static constants.Const.BASE_URL;
 
