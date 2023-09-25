@@ -21,16 +21,16 @@ import static org.myProject.api.pojo.BaseRequest.postReg;
 import static org.myProject.api.pojo.BaseRequest.putChange;
 
 
-public class RestTest {
+public class RestTest extends BaseTest{
     //array list for deleted users
     private final static List<String> usersForDelete = new ArrayList<>();
 
     private final static String URL = PropertiesConfig.URL;
 
-    @BeforeSuite
-    public void beforeTEst() {
-        RestAssured.baseURI = PropertiesConfig.baseURI;
-    }
+//    @BeforeSuite
+//    public void beforeTEst() {
+//        RestAssured.baseURI = PropertiesConfig.baseURI;
+//    }
 
     //method to delete users
     @AfterSuite

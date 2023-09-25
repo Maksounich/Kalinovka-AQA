@@ -34,13 +34,13 @@ public class AuthService {
         return tokens.get(Thread.currentThread().getId());
     }
 
-    public static void register(SwaggerSignUp user, int status) {
+    public static void register(Object user, int status) {
         Response response = postReg(user, "/sign-up");
 
         assertThat(response.getStatusCode()).isEqualTo(status);
     }
 
-    public static String login(SwaggerSignIn userLogin) {
+    public static String login(Object userLogin) {
         Response response = postReg(userLogin, "/sign-in");
 
         assertThat(response.getStatusCode()).isEqualTo(200);

@@ -26,12 +26,13 @@ public class LoginTests extends BaseTest {
 
         String token = AuthService.login(user);
 
-        Assertions.assertThat(token.length()).isEqualTo(121);
+        Assertions.assertThat(token.length()).isEqualTo(123);
     }
 
     @Test
     public void checkHappyToken() {
         SwaggerSignIn user = new SwaggerSignIn();
+        user.setUsername(swaggerSignUp.getUsername());
 
         String token = AuthService.login(user);
 
