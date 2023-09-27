@@ -9,6 +9,7 @@ import org.myProject.api.utils.PropertiesConfig;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ import static org.myProject.api.pojo.BaseRequest.postReg;
 import static org.myProject.api.pojo.BaseRequest.putChange;
 
 
-public class RestTest extends BaseTest{
+public class RestTest extends BaseTest {
     //array list for deleted users
     private final static List<String> usersForDelete = new ArrayList<>();
 
@@ -200,7 +201,7 @@ public class RestTest extends BaseTest{
         password.setUsername(userLogin.getUsername());
         Response response = putChange(password, login.getAccess_token());
 
-        usersForDelete.add(user.getUsername());
+//        usersForDelete.add(user.getUsername());
 
 
         Assert.assertEquals(password.getNew_password(), password.getConfirm_new_password());
@@ -218,7 +219,23 @@ public class RestTest extends BaseTest{
     }
 
 
-}
+
+        @DataProvider(name = "testData")
+        public Object[][] testData() {
+            return new Object[][]{
+                    {1, 2, 3},
+                    {10, 5, 15},
+                    {-3, 8, 5}
+            };
+        }
+
+        @Test(dataProvider = "testData")
+        public void testAddition(int a, int b, int expectedSum) {
+            int result = a + b;
+            assert result == expectedSum;
+        }
+    }
+
 
 
 //my first test
