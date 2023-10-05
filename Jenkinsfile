@@ -11,5 +11,10 @@ pipeline {
                 sh "mvn clean -D suite=suiteAPI test"
             }
         }
+        post {
+            always {
+                archiveArtifacts artifacts: 'target/allure-results/*.json', fingerprint: true
+            }
+        }
     }
 }
