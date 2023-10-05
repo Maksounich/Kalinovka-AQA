@@ -1,34 +1,26 @@
 pipeline {
-        agent any
+    agent any
 
-        stages{
-            stage ('Compile Stage') {
+    tools {
+        maven "mvn 3.9.5"
+    }
 
-                 steps {
-                    withMaven(maven : 'mvn 3.9.5') {
-                    sh 'mvn clean compile'
-                    }
-                }
+    stages {
+        stage('Build') {
+            steps {
+                sh "mvn clean -D suite=suiteAPI test"
             }
+            post {
 
-            stage ('Testing Stage') {
-
-                             steps {
-                                withMaven(maven : 'mvn 3.9.5') {
-                                sh 'mvn test'
-                                }
-                            }
+                            success { allure([
+                                includeProperties: false,
+                                jdk: '',
+                                properties: [],
+                                reportBuildPolicy: 'ALWAYS',
+                                results: [[path: 'target/allure-results']]
+                            ])
                         }
-
-            stage ('Deployment Stage') {
-
-                             steps {
-                                withMaven(maven : 'mvn 3.9.5') {
-                                sh 'mvn deploy'
-                                }
-                            }
-                        }
-
-
         }
+    }
+}
 }
