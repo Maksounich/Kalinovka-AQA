@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "API tests">
+
+    <test name = "RegisterTest">
+        <classes>
+            <class name = "api.RegisterTests" />
+        </classes>
+    </test>
+
+    <test name = "LoginTest">
+        <classes>
+            <class name = "api.LoginTests" />
+        </classes>
+    </test>
+
+    <test name = "StudentTest">
+        <classes>
+            <class name = "api.RestTest" />
+        </classes>
+    </test>
+
+
+</suite>

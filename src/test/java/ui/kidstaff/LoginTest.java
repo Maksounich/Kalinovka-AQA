@@ -1,6 +1,6 @@
 package ui.kidstaff;
 
-import org.myProject.ui.SignInPage;
+import org.myProject.ui.kidstaff.SignInPage;
 
 import org.testng.annotations.Test;
 

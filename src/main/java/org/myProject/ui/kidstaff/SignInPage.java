@@ -1,11 +1,8 @@
-package org.myProject.ui;
+package org.myProject.ui.kidstaff;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
-import org.myProject.api.pojo.ChangedPassword;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;

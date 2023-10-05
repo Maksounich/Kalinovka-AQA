@@ -1,4 +1,4 @@
-package org.myProject.ui;
+package org.myProject.ui.kidstaff;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;

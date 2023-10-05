@@ -1,4 +1,4 @@
-package org.myProject.ui;
+package org.myProject.ui.kidstaff;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
