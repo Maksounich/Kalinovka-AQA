@@ -1,5 +1,6 @@
 package org.myProject.api.pojo.service;
 
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.myProject.api.pojo.SwaggerSignIn;
 import org.myProject.api.pojo.SwaggerSignUp;
@@ -34,12 +35,13 @@ public class AuthService {
         return tokens.get(Thread.currentThread().getId());
     }
 
+    @Step("registration {0}")
     public static void register(Object user, int status) {
         Response response = postReg(user, "/sign-up");
 
         assertThat(response.getStatusCode()).isEqualTo(status);
     }
-
+    @Step("login {0}")
     public static String login(Object userLogin) {
         Response response = postReg(userLogin, "/sign-in");
 

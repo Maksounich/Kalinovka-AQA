@@ -10,7 +10,7 @@ public class BaseTest {
 
 
     @BeforeSuite
-    public void beforeTEst() {
+    public void beforeTest() {
         PropertiesConfig.setUpProperties();
 
         RestAssured.baseURI = PropertiesConfig.baseURI;
