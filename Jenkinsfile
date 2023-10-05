@@ -1,14 +1,15 @@
 pipeline {
-        agent any
+    agent any
 
-        stages {
-            stage ('Compile Stage') {
+    tools {
+        maven "mvn 3.9.5"
+    }
 
-                 steps {
-                    withMaven(maven : 'mvn 3.9.5') {
-                         sh 'mvn clean compile'
-                    }
-                }
+    stages {
+        stage('Build') {
+            steps {
+                sh "mvn clean -D suite=suiteAPI test"
             }
         }
+    }
 }
